@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>To Do List</title>
 </head>
 <body>
-   <h1><%= kindOfDay %> ToDo List</h1>
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %> ToDo List</h1>
+    </div>
+    <div class="box">
+        <% newItems.forEach(item => { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= item %></p>
+            </div>
+        <% }) %>
 
-   <ul>
-       <% newItems.forEach(item => { %>
-           <li><%= item %></li>
+        <form class="item" action="/" method="POST">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+    </div>
 
-       <% }) %>
-   </ul>
-
-   <form class="" action="/" method="POST">
-    <input type="text" name="newItem">
-    <button type="submit" name="button">Add</button>
-
-   </form>
 </body>
 </html>
