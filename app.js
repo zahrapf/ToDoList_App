@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-const items = ["15 mins Morning Workout"]; 
+const items = ["15 mins Morning Workout", "Make breakfast"]; 
 const workItems = [];
 
 app.get("/",  (req, res) => {
